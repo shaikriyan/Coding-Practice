@@ -14,41 +14,35 @@ void print(vector<T> v){
 	cout<<"]";
 }
 
-// In Insertion sort , we will be having the sorted portion & unsorted portion
-// from unsorted portion we will pick the element & insert it , in it's correct position in sorted array.
+// In Selection sort, we will select the least element one by one 
+// place it in the begining...sort it.
 
-void insertionSort(vector<int>&v){
-
+void selectionSort(vector<int>&v){
 	int n = v.size();
 
-	for(int i=1;i<n;i++){
-		int temp = v[i];
-		int j = i-1;
-
-		while(j>=0){
-			if(v[j]>temp){
-				v[j+1] = v[j];
+	for(int i=0;i<n;i++){
+		int ind = -1, mini = INT_MAX;
+		for(int j=i;j<n;j++){
+			if(v[j]<mini){
+				mini = v[j];
+				ind = j;
 			}
-			else{
-				break;
-			}
-			j--;
 		}
-		v[j+1] = temp;
-
+		swap(v[i], v[ind]);
 	}
+
 	return;
 }
 
 
 int main()
 {
-	// vector<int> v = {5,4,1,3,2};
+	// vector<int>v = {5,4,1,3,2};
 	vector<int>v = {0, 23,234, -123, 534,34,245,34,664,74,56,4};
-
+	
 	int n = v.size();
 
-	insertionSort(v);
+	selectionSort(v);
 
 	for(auto it : v){
 		cout<<it<<" ";
