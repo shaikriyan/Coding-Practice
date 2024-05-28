@@ -1,1 +1,1 @@
-Helo wordllkdngnawe
+ans = { 9 : -1 },
