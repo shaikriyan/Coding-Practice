@@ -218,7 +218,7 @@ Node* reverseDLL(Node* head){
 int main()
 {
 
-	vector<int>nums = {1,2,3,4};
+	vector<int>nums = {2,2,10,8,4,2,5,2};
 	Node* head = array2DLL(nums);
 	// int len = getCount(head);
 	// deb(len);
