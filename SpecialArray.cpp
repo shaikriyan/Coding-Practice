@@ -10,39 +10,36 @@ template<typename K, typename V> void print(unordered_map<K, V> umap){ cout<<"{ 
 template<typename K, typename V> void print(map<K, V> mp){ cout<<"{ "; for(auto it : mp){ cout<<"{ "; print(it); cout<<" }, "; } cout<<"}"; }
 template<typename T> void print(stack<T> st){ cout<<"[ "; while(!st.empty()){ print(st.top());cout<<" "; st.pop(); } cout<<"]"; }
 
+bool isSpecial(vector<int>&nums, int x){
+	int cnt = 0;
+	for(auto it : nums) if(it>=x) cnt++;
+	return (cnt==x);
+}
+
+
+int solve(vector<int>&nums){
+
+	int n = nums.size();
+	int ans = -1;
+	for(int i=n;i>=0;i--){
+		if(isSpecial(nums, i)){
+			ans = i;
+			break;
+		}
+	}
+	return ans;
+}
+
+
 
 
 int main()
 {
 
-	vector<int> nums  = {223,23,4,23,4,2,5,23,4,2};
-	deb(nums);
-
-	vector<pair<int,int>> vec_pr= {{1,2},{2,3},{3,4}};
-	deb(vec_pr); 
-
-	set<int>stt(nums.begin(), nums.end());
-	deb(stt);
-
-	set<pair<int,int>>st_pr(vec_pr.begin(), vec_pr.end());
-	deb(st_pr);
-
-
-	stack<int>st;
-	st.push(1);
-	st.push(3);
-	st.push(2);
-	deb(st);
-
-	stack< pair<int, int> > stt_pr;
-	stt_pr.push({2,3});
-	stt_pr.push({1,6});
-	stt_pr.push({6,5});
-	deb(stt_pr);
-
-
-
-
+	// vector<int> nums = {0,4,3,0,4};
+	vector<int> nums = {3,6,7,7,0};
+	int x = solve(nums);
+	deb(x);
 
 	return 0;
 }
