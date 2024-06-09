@@ -1,3 +1,2 @@
-preorderAns = [ 5 9 6 2 8 7 3 ]
-inorderAns = [ 9 2 6 5 7 8 3 ]
-postorderAns = [ 2 6 9 7 3 8 5 ]
+1 -> 2 -> 3 -> 4 -> 5 -> 
+5 -> 
